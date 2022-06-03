@@ -14,7 +14,6 @@ function playerPlay() {
         }
         
         playerSelection = playerSelection.toLowerCase();
-        console.log(playerSelection);
 
         if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
             return playerSelection;
