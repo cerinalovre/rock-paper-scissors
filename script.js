@@ -4,15 +4,24 @@ function computerPlay() {
 }
 
 function playerPlay() {
-    let playerSelection = prompt('Choose "rock", "paper" or "scissors"');
-    playerSelection.toLowerCase();
+    let playerSelection = '';
 
-    if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
-        return playerSelection;
-    }
-    else {
-        console.log('Invalid input, try again!');
-        playerPlay();
+    while (playerSelection != null) {
+        playerSelection = prompt('Choose "rock", "paper" or "scissors"');
+
+        if (playerSelection === null) {
+            throw new Error('You quit the game!');
+        }
+        
+        playerSelection = playerSelection.toLowerCase();
+        console.log(playerSelection);
+
+        if (playerSelection == 'rock' || playerSelection == 'paper' || playerSelection == 'scissors') {
+            return playerSelection;
+        }
+        else {
+            console.log('Invalid input, try again!');
+        }
     }
 }
 
