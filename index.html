@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -13,27 +20,36 @@
     </header>
 
     <main>
-      <div class="player">
-        <p>CHOOSE ROCK, PAPER OR SCISSORS:</p>
-        <div class="player-select"></div>
-      </div>
-      <div class="main-screen">
-        <h2>BEST OF 5</h2>
-        <div class="main-screen-container">
-          <div class="player-info">
-            <div class="score-box"></div>
-            <div class="player-text">PLAYER</div>
-            <div class="player-select-box"></div>
-          </div>
-          <div class="vs">VS</div>
-          <div class="comp-info">
-            <div class="score-box"></div>
-            <div class="player-text">COMPUTER</div>
-            <div class="comp-select-box"></div>
-          </div>
+      <p class="welcome-text">
+        Welcome to the Rock, paper, scissors game. The winner is the player who
+        reaches <strong>3 points</strong>. Good luck!
+      </p>
+      <div class="main-container">
+        <div class="player">
+          <p class="choose-text">CHOOSE ROCK, PAPER OR SCISSORS:</p>
+          <div class="player-rock"><img src="assets/rock.svg" /></div>
+          <div class="player-paper"><img src="assets/paper.svg" /></div>
+          <div class="player-scissors"><img src="assets/scissors.svg" /></div>
         </div>
-        <div class="win-lose"></div>
-        <div class="rps-info"></div>
+
+        <div class="main-screen">
+          <div class="game-screen">
+            <div class="player-info">
+              <div class="player-score-box"></div>
+              <div class="player-text">PLAYER</div>
+              <div class="player-select-box"></div>
+            </div>
+            <div class="vs">VS</div>
+            <div class="comp-info">
+              <div class="comp-score-box"></div>
+              <div class="player-text">COMPUTER</div>
+              <div class="comp-select-box"></div>
+            </div>
+          </div>
+
+          <div class="win-lose"></div>
+          <div class="rps-info"></div>
+        </div>
       </div>
     </main>
   </body>

@@ -71,7 +71,7 @@ function game() {
     "Welcome to the Rock, paper, scissors game. The game is played for 5 rounds. Good luck!"
   );
 
-  for (let i = 0; i < 5; i++) {
+  while (playerScore < 3 && computerScore < 3) {
     result = playRound(playerPlay(), computerPlay());
 
     if (result === "win") {
