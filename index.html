@@ -22,33 +22,39 @@
     <main>
       <p class="welcome-text">
         Welcome to the Rock, paper, scissors game. The winner is the player who
-        reaches <strong>3 points</strong>. Good luck!
+        reaches <strong>5 points</strong>. Good luck!
       </p>
       <div class="main-container">
         <div class="player">
           <p class="choose-text">CHOOSE ROCK, PAPER OR SCISSORS:</p>
-          <div class="player-rock"><img src="assets/rock.svg" /></div>
-          <div class="player-paper"><img src="assets/paper.svg" /></div>
-          <div class="player-scissors"><img src="assets/scissors.svg" /></div>
+          <div class="player-rock">
+            <a id="rock-button"><img src="assets/rock.svg" /></a>
+          </div>
+          <div class="player-paper">
+            <a id="paper-button"><img src="assets/paper.svg" /></a>
+          </div>
+          <div class="player-scissors">
+            <a id="scissors-button"><img src="assets/scissors.svg" /></a>
+          </div>
         </div>
 
         <div class="main-screen">
           <div class="game-screen">
             <div class="player-info">
-              <div class="player-score-box"></div>
+              <div class="player-score-box">0</div>
               <div class="player-text">PLAYER</div>
               <div class="player-select-box"></div>
             </div>
             <div class="vs">VS</div>
             <div class="comp-info">
-              <div class="comp-score-box"></div>
+              <div class="comp-score-box">0</div>
               <div class="player-text">COMPUTER</div>
               <div class="comp-select-box"></div>
             </div>
           </div>
 
-          <div class="win-lose"></div>
           <div class="rps-info"></div>
+          <div class="win-lose"></div>
         </div>
       </div>
     </main>

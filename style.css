@@ -25,6 +25,19 @@ h1 {
   color: #22223b;
 }
 
+.rps-info {
+  margin-top: 32px;
+  font-size: 1.8em;
+  color: #22223b;
+}
+
+.win-lose {
+  margin-top: 64px;
+  font-size: 3em;
+  color: #22223b;
+  font-weight: bold;
+}
+
 .choose-text,
 .player-text {
   font-size: 1.3em;
@@ -53,11 +66,20 @@ h1 {
 
 .player-rock,
 .player-paper,
-.player-scissors {
+.player-scissors,
+.select-rock,
+.select-paper,
+.select-scissors {
   padding: 20px;
   border: 3px solid #4a4e69;
   border-radius: 7px;
   background-color: #4a4e69;
+}
+
+.player-rock:hover,
+.player-paper:hover,
+.player-scissors:hover {
+  border: 3px solid #f2e9e4;
 }
 
 .main-screen {
@@ -92,13 +114,19 @@ h1 {
 
 .player-score-box,
 .comp-score-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
   margin-bottom: 20px;
   border: 3px solid #4a4e69;
   border-radius: 7px;
   background-color: #4a4e69;
+  color: #f2e9e4;
   width: 100px;
   height: 64px;
+  font-size: 32px;
+  font-weight: bold;
 }
 
 .player-select-box,
