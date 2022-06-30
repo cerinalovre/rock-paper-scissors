@@ -46,9 +46,35 @@ function updateScore(result) {
 
   if (score.player === 5) {
     winLose.textContent = `You WON ${score.player} : ${score.computer}`;
+    newGame();
   } else if (score.computer === 5) {
     winLose.textContent = `You LOST ${score.player} : ${score.computer}`;
+    newGame();
   }
+}
+
+function newGame() {
+  const modal = document.querySelector(".modal");
+  const body = document.querySelector("body");
+  const yesButton = document.querySelector("#yes-button");
+  const noButton = document.querySelector("#no-button");
+
+  modal.style.display = "block";
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  yesButton.addEventListener("click", () => {
+    window.location.reload();
+  });
+
+  noButton.addEventListener("click", () => {
+    modal.style.display = "none";
+    body.classList.add("disabled");
+  });
 }
 
 function main() {

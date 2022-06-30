@@ -142,3 +142,59 @@ img {
   width: 128px;
   height: auto;
 }
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #22223b;
+  background-color: #9a8c98;
+  border: 3px solid #22223b;
+  border-radius: 7px;
+  margin: 15% auto;
+  padding: 48px;
+  width: 30%;
+}
+
+button {
+  all: unset;
+  font-size: 0.8em;
+  font-weight: 400;
+  border: 3px solid #22223b;
+  border-radius: 7px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  padding: 12px 16px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 5vw;
+}
+
+button:hover {
+  border-color: #f2e9e4;
+  color: #f2e9e4;
+  transform: scale(1.1);
+}
+
+.disabled {
+  pointer-events: none;
+}
