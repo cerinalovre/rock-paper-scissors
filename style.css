@@ -32,6 +32,7 @@ h1 {
 
 .win-lose {
   margin-top: 64px;
+  margin-bottom: 32px;
   font-size: 3em;
   color: #22223b;
   font-weight: bold;
