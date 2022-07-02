@@ -9,7 +9,7 @@ function playRound(playerSelection, computerSelection) {
       rpsInfo.textContent = "You LOSE! Paper beats Rock!";
       return "lose";
     } else if (computerSelection === "scissors") {
-      rpsInfo.textContent = "You WIN! Scissors beat Rock!";
+      rpsInfo.textContent = "You WIN! Rock beats Scissors!";
       return "win";
     }
   } else if (playerSelection === "paper") {
@@ -68,7 +68,7 @@ function newGame() {
   };
 
   yesButton.addEventListener("click", () => {
-    window.location.reload();
+    location.reload();
   });
 
   noButton.addEventListener("click", () => {
