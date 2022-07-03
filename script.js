@@ -55,7 +55,7 @@ function updateScore(result) {
 
 function newGame() {
   const modal = document.querySelector(".modal");
-  const body = document.querySelector("body");
+  const mainContainer = document.querySelector(".main-container");
   const yesButton = document.querySelector("#yes-button");
   const noButton = document.querySelector("#no-button");
 
@@ -74,7 +74,7 @@ function newGame() {
 
   noButton.addEventListener("click", () => {
     modal.style.display = "none";
-    body.classList.add("disabled");
+    mainContainer.classList.add("disabled");
   });
 }
 
