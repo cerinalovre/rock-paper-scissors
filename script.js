@@ -63,7 +63,7 @@ function newGame() {
 
   window.onclick = function (event) {
     if (event.target == modal) {
-      body.classList.add("disabled");
+      mainContainer.classList.add("disabled");
       modal.style.display = "none";
     }
   };
