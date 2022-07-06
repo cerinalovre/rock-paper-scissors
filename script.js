@@ -1,33 +1,19 @@
 function playRound(playerSelection, computerSelection) {
   const rpsInfo = document.querySelector(".rps-info");
 
-  if (playerSelection === computerSelection) {
+  if (outcomeRules[playerSelection]["wins"] === computerSelection) {
+    rpsInfo.textContent = `You WIN! ${capitalize(
+      playerSelection
+    )} beats ${capitalize(computerSelection)}!`;
+    return "win";
+  } else if (outcomeRules[playerSelection]["loses"] === computerSelection) {
+    rpsInfo.textContent = `You LOSE! ${capitalize(
+      computerSelection
+    )} beats ${capitalize(playerSelection)}!`;
+    return "lose";
+  } else {
     rpsInfo.textContent = "DRAW!";
     return "draw";
-  } else if (playerSelection === "rock") {
-    if (computerSelection === "paper") {
-      rpsInfo.textContent = "You LOSE! Paper beats Rock!";
-      return "lose";
-    } else if (computerSelection === "scissors") {
-      rpsInfo.textContent = "You WIN! Rock beats Scissors!";
-      return "win";
-    }
-  } else if (playerSelection === "paper") {
-    if (computerSelection === "scissors") {
-      rpsInfo.textContent = "You LOSE! Scissors beat Paper!";
-      return "lose";
-    } else if (computerSelection === "rock") {
-      rpsInfo.textContent = "You WIN! Paper beats Rock!";
-      return "win";
-    }
-  } else if (playerSelection === "scissors") {
-    if (computerSelection === "rock") {
-      rpsInfo.textContent = "You LOSE! Rock beats Scissors!";
-      return "lose";
-    } else if (computerSelection === "paper") {
-      rpsInfo.textContent = "You WIN! Scissors beat Paper!";
-      return "win";
-    }
   }
 }
 
@@ -78,12 +64,22 @@ function newGame() {
   });
 }
 
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 function main() {
   let result = null;
 
   score = {
     player: 0,
     computer: 0,
+  };
+
+  outcomeRules = {
+    rock: { wins: "scissors", loses: "paper" },
+    paper: { wins: "rock", loses: "scissors" },
+    scissors: { wins: "paper", loses: "rock" },
   };
 
   const rockButton = document.querySelector("#rock-button");
@@ -111,6 +107,7 @@ function main() {
     playerSelectBox.className = "";
     playerSelectBox.classList.toggle(itemClass);
     playerSelectBox.appendChild(playerSelectionImg);
+
     result = playRound(playerSelection, computerPlay());
     updateScore(result);
   }
@@ -118,10 +115,12 @@ function main() {
   function computerPlay() {
     const options = ["rock", "paper", "scissors"];
     let computerSelection = options[Math.floor(Math.random() * options.length)];
+
     compSelectionImg.setAttribute("src", `assets/${computerSelection}.svg`);
     compSelectBox.className = "";
     compSelectBox.classList.toggle(`select-${computerSelection}`);
     compSelectBox.appendChild(compSelectionImg);
+
     return computerSelection;
   }
 }
