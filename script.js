@@ -45,10 +45,25 @@ function newGame() {
   const yesButton = document.querySelector("#yes-button");
   const noButton = document.querySelector("#no-button");
 
+  function disableScroll() {
+    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+    window.onscroll = function () {
+      window.scrollTo(scrollLeft, scrollTop);
+    };
+  }
+
+  function enableScroll() {
+    window.onscroll = function () {};
+  }
+
   modal.style.display = "block";
+  disableScroll();
 
   window.onclick = function (event) {
     if (event.target == modal) {
+      enableScroll();
       mainContainer.classList.add("disabled");
       modal.style.display = "none";
     }
@@ -59,6 +74,7 @@ function newGame() {
   });
 
   noButton.addEventListener("click", () => {
+    enableScroll();
     modal.style.display = "none";
     mainContainer.classList.add("disabled");
   });

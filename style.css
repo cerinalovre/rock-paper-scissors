@@ -32,13 +32,15 @@ h1 {
 }
 
 .rps-info {
+  height: 1em;
   margin-top: 0.6em;
   font-size: 1.8em;
   color: #22223b;
 }
 
 .win-lose {
-  margin-top: 1.1em;
+  height: 1em;
+  margin-top: 1em;
   margin-bottom: 0.8em;
   font-size: 3em;
   color: #22223b;
@@ -83,7 +85,7 @@ h1 {
 .select-rock,
 .select-paper,
 .select-scissors {
-  padding: 1.5em;
+  padding: 1em;
   border: 3px solid #4a4e69;
   border-radius: 7px;
   background-color: #4a4e69;
@@ -95,20 +97,20 @@ h1 {
   border: 3px solid #f2e9e4;
 }
 
-.main-screen {
-  background-color: #9a8c98;
-  border: 3px solid #22223b;
-  border-radius: 7px;
-  margin: 0.5em;
-  max-width: fit-content;
-}
-
 .main-screen,
 .player-info,
 .comp-info {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.main-screen {
+  background-color: #9a8c98;
+  border: 3px solid #22223b;
+  border-radius: 7px;
+  margin: 0.5em;
+  max-width: fit-content;
 }
 
 .game-screen {
@@ -146,8 +148,8 @@ h1 {
 
 .player-select-box,
 .comp-select-box {
-  width: 174px;
-  height: 177px;
+  width: 166px;
+  height: 169px;
   border: 3px solid #4a4e69;
   border-radius: 7px;
   background-color: #4a4e69;
@@ -180,11 +182,16 @@ img {
   font-size: 2.5em;
   font-weight: bold;
   text-align: center;
+  white-space: nowrap;
   color: #22223b;
   background-color: #9a8c98;
   border: 3px solid #22223b;
   border-radius: 7px;
-  margin: 15% auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   padding: 1.3em;
   width: 30%;
   min-width: min-content;
@@ -240,21 +247,28 @@ footer {
     display: none;
   }
 
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
   .main-container {
     flex-direction: column;
     align-items: center;
-    margin: 5vh 0px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
   }
 
   .game-screen {
     display: flex;
     justify-content: space-around;
-    padding: 12px;
+    padding: 16px;
     gap: 12px;
   }
 
   .main-screen {
-    margin-top: 24px;
+    margin-top: 5vh;
   }
 
   img {
@@ -269,14 +283,15 @@ footer {
 
   .player-select-box,
   .comp-select-box {
-    width: 94px;
-    height: 97px;
+    width: 86px;
+    height: 89px;
   }
 
   .player-score-box,
   .comp-score-box {
+    padding: 0.8em;
+    margin-bottom: 0.6em;
     width: 60px;
-    height: 40px;
   }
 
   footer {
